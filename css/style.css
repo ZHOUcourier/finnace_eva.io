@@ -1,0 +1,960 @@
+/* 
+主样式表 (style.css)
+此文件包含网站的全局样式设置，包括颜色、排版、布局等基础样式
+*/
+
+/* ===== 全局重置与基础设置 ===== */
+:root {
+    --primary-color: #C1272D;    /* 中国红 */
+    --secondary-color: #4A7DAB;  /* 青花瓷蓝 */
+    --accent-color: #E4B040;     /* 金黄色，代表传统工艺 */
+    --dark-color: #333333;       /* 深灰色 */
+    --light-color: #F7F4EB;      /* 米白色，传统纸张颜色 */
+    --text-color: #333333;
+    --border-color: #E0E0E0;
+    --success-color: #4CAF50;
+    --warning-color: #FF9800;
+    --error-color: #F44336;
+    --gray-100: #F5F5F5;
+    --gray-200: #EEEEEE;
+    --gray-300: #E0E0E0;
+    --gray-400: #BDBDBD;
+    --gray-500: #9E9E9E;
+    --gray-600: #757575;
+    --gray-700: #616161;
+    --gray-800: #424242;
+    --gray-900: #212121;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Serif SC', 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #C2185B;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.required {
+    color: var(--error-color);
+}
+
+/* ===== 排版 ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+h1 {
+    font-size: 3.6rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 1.8rem;
+}
+
+h6 {
+    font-size: 1.6rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8rem;
+    height: 0.3rem;
+    background-color: var(--primary-color);
+}
+
+/* ===== 按钮 ===== */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.4rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 1.6rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #C2185B;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #1976D2;
+    color: white;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-large {
+    padding: 1.5rem 3rem;
+    font-size: 1.8rem;
+}
+
+/* ===== 头部 ===== */
+header {
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.logo h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2.5rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+.mobile-menu-icon {
+    display: none;
+    font-size: 2.4rem;
+    cursor: pointer;
+}
+
+/* ===== 英雄区 ===== */
+.hero {
+    padding: 6rem 0;
+    background-color: var(--light-color);
+}
+
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 4rem;
+}
+
+.hero-content h2 {
+    font-size: 4.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+/* ===== 特性卡片 ===== */
+.features {
+    padding: 8rem 0;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 1.5rem;
+}
+
+/* ===== 统计数据 ===== */
+.statistics {
+    padding: 6rem 0;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.statistics .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 200px;
+    padding: 2rem;
+}
+
+.stat-item h3 {
+    font-size: 4.2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.stat-item p {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+/* ===== 案例研究 ===== */
+.case-studies {
+    padding: 8rem 0;
+    background-color: var(--light-color);
+}
+
+.case-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.case-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.case-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.case-content {
+    padding: 2rem;
+}
+
+.case-content h3 {
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+
+.read-more i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover i {
+    transform: translateX(5px);
+}
+
+.view-all {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* ===== 合作伙伴 ===== */
+.partners {
+    padding: 6rem 0;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: center;
+}
+
+.partner-logo {
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+/* 设置合作伙伴标志的图片大小 */
+.partner-logos .partner-logo img {
+    width: 100px; /* 设置图片宽度 */
+    height: 100px; /* 设置图片高度 */
+    object-fit: cover; /* 保持图片比例并裁剪以适应容器 */
+}
+
+
+.partner-logo:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* ===== 号召性用语 ===== */
+.cta {
+    padding: 8rem 0;
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    color: white;
+    font-size: 3.6rem;
+    margin-bottom: 2rem;
+}
+
+.cta p {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== 页面横幅 ===== */
+.page-banner {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.page-banner h2 {
+    color: white;
+    font-size: 4.2rem;
+    margin-bottom: 2rem;
+}
+
+.page-banner p {
+    font-size: 1.8rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== 联系方式样式 ===== */
+.cta-contact {
+    padding: 6rem 0;
+    background-color: var(--light-color);
+}
+
+.contact-content {
+    text-align: center;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.contact-method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    min-width: 150px;
+}
+
+.contact-method:hover {
+    transform: translateY(-10px);
+}
+
+.contact-method i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* ===== 表单样式 ===== */
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 3rem;
+    box-shadow: var(--box-shadow);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1.6rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.note {
+    font-size: 1.4rem;
+    color: var(--gray-600);
+    margin-top: 0.5rem;
+}
+
+.form-privacy {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.form-privacy input {
+    margin-right: 1rem;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* ===== 页脚 ===== */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 6rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.footer-about p {
+    margin-top: 2rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+}
+
+.social-icons i {
+    color: white;
+    font-size: 2rem;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    color: white;
+    position: relative;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.footer-links h4::after,
+.footer-contact h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 5rem;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.footer-links ul li {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: var(--gray-400);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: var(--gray-400);
+}
+
+.footer-contact i {
+    margin-right: 1rem;
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gray-500);
+    font-size: 1.4rem;
+}
+
+.footer-bottom a {
+    color: var(--gray-400);
+}
+
+.footer-bottom a:hover {
+    color: white;
+}
+
+/* 美化增强样式 - 添加到style.css文件末尾 */
+
+/* 1. 渐变按钮效果 */
+.btn-primary {
+    background-image: linear-gradient(to right, var(--primary-color), #A91E24);
+    border: none;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn-primary:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #A91E24, var(--primary-color));
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.btn-primary:hover:before {
+    left: 0;
+}
+
+/* 2. 卡片悬停效果增强 */
+.feature-card, .case-card, .stats-card, .result-item {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.feature-card:hover, .case-card:hover, .stats-card:hover, .result-item:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 3. 页面横幅背景增强 */
+.page-banner {
+    background-image: linear-gradient(120deg, #2C2C2C, #444444);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-banner:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/pattern.png');
+    opacity: 0.1;
+}
+
+/* 4. 导航栏滚动效果增强 */
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. 文字下划线效果 */
+.section-title {
+    display: inline-block;
+    position: relative;
+}
+
+.section-title:after {
+    height: 4px;
+    background-image: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+    width: 6rem;
+}
+
+/* 6. 图片悬停效果 */
+.case-card img, .result-image img {
+    transition: transform 0.4s ease;
+}
+
+.case-card:hover img, .result-item:hover .result-image img {
+    transform: scale(1.05);
+}
+
+/* 7. 数字增长动画 */
+@keyframes count-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stats-number, .stat-number, .stat-item h3 {
+    animation: count-up 1.5s ease forwards;
+}
+
+/* 8. 评估流程步骤美化 */
+.step-number {
+    position: relative;
+    overflow: hidden;
+}
+
+.step-number:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(0);
+    border-radius: 50%;
+    transition: transform 0.6s ease;
+}
+
+.step-number:hover:after {
+    transform: scale(2);
+}
+
+/* 9. 表单提交按钮美化 */
+.form-submit .btn {
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.4s ease;
+}
+
+.form-submit .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(193, 39, 45, 0.3);
+}
+
+/* 10. 页脚链接悬停效果 */
+.footer-links a {
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-links a:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-10px);
+}
+
+.footer-links a:hover:before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-links a:hover {
+    padding-left: 20px;
+}
+
+/* 11. 搜索框美化 */
+.search-input input {
+    border: 2px solid var(--border-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(193, 39, 45, 0.1);
+}
+
+.search-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.search-btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+}
+
+.search-btn:hover:before {
+    left: 0;
+}
+
+/* 12. 徽章效果增强 */
+.result-badge {
+    transform: rotate(-3deg);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.result-item:hover .result-badge {
+    transform: rotate(0) scale(1.1);
+}
+
+/* 13. 分页按钮效果 */
+.pagination-btn {
+    overflow: hidden;
+    position: relative;
+}
+
+.pagination-btn:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.pagination-btn:hover:after {
+    width: 120%;
+    height: 120%;
+}
+
+/* 14. 滚动到顶部按钮 */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 99;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background-color: #A91E24;
+}
+
+/* 15. 加载动画美化 */
+.spinner-circle {
+    box-shadow: 0 0 10px rgba(193, 39, 45, 0.3);
+}

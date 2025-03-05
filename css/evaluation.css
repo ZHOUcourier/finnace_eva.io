@@ -1,0 +1,321 @@
+/* 
+评估系统样式表 (evaluation.css)
+此文件包含评估系统页面的特定样式
+*/
+
+/* ===== 评估系统介绍 ===== */
+.evaluation-intro {
+    padding: 8rem 0;
+}
+
+.evaluation-intro .container {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-text h2 {
+    margin-bottom: 2.5rem;
+    font-size: 3.6rem;
+}
+
+.intro-image {
+    flex: 1;
+}
+
+.intro-stats {
+    display: flex;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.intro-stats .stat-item {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 150px;
+}
+
+.intro-stats .stat-item h3 {
+    color: var(--primary-color);
+    font-size: 3.6rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ===== 评估流程 ===== */
+.evaluation-process {
+    padding: 8rem 0;
+    background-color: var(--light-color);
+}
+
+.process-steps {
+    position: relative;
+}
+
+.process-steps::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 25px;
+    width: 2px;
+    background-color: var(--primary-color);
+    z-index: 1;
+}
+
+.process-step {
+    display: flex;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.process-step:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: 2rem;
+    z-index: 3;
+}
+
+.step-content {
+    flex: 1;
+    background-color: white;
+    padding: 2rem 3rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.step-content h3 {
+    margin-bottom: 1rem;
+}
+
+/* ===== 评估维度 ===== */
+.evaluation-dimensions {
+    padding: 8rem 0;
+}
+
+.dimensions-tabs {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--gray-300);
+    margin-bottom: 4rem;
+}
+
+.tab-btn {
+    padding: 1.5rem 2.5rem;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+}
+
+.tab-btn.active::after {
+    width: 100%;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.dimension-image {
+    flex: 1;
+}
+
+.dimension-info {
+    flex: 1;
+}
+
+.dimension-info h3 {
+    margin-bottom: 2rem;
+}
+
+.dimension-factors {
+    margin-top: 2rem;
+}
+
+.dimension-factors li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.dimension-factors li i {
+    color: var(--success-color);
+    margin-right: 1rem;
+}
+
+/* ===== 评估表单 ===== */
+.evaluation-form {
+    padding: 8rem 0;
+    background-color: var(--light-color);
+}
+
+/* ===== 用户评价 ===== */
+.evaluation-testimonials {
+    padding: 8rem 0;
+}
+
+.testimonial-slider {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 3rem;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 3rem;
+}
+
+.testimonial-content {
+    font-style: italic;
+    font-size: 1.8rem;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.testimonial-content::before {
+    content: '\201C';
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    font-size: 6rem;
+    color: var(--gray-300);
+    font-family: serif;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1.5rem;
+}
+
+.author-info h4 {
+    margin-bottom: 0.5rem;
+}
+
+.author-info p {
+    color: var(--gray-600);
+    margin-bottom: 0;
+}
+
+/* ===== 常见问题 ===== */
+.evaluation-faq {
+    padding: 8rem 0;
+    background-color: var(--light-color);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question h3 {
+    margin-bottom: 0;
+    font-size: 1.8rem;
+}
+
+.toggle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--gray-200);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .toggle-icon {
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 3rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 3rem 2rem;
+    max-height: 1000px;
+}

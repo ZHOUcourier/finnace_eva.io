@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非遗金融评估体系 - 案例展示</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/api/placeholder/150/50" alt="非遗金融评估体系">
+                <h1>非遗金融评估体系</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="evaluation.html">评估系统</a></li>
+                    <li><a href="database.html">非遗数据库</a></li>
+                    <li><a href="projects.html" class="active">案例展示</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+                <div class="mobile-menu-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h2>案例展示</h2>
+            <p>探索我们如何通过金融评估助力非遗项目实现传承与创新发展</p>
+        </div>
+    </section>
+
+    <section class="projects-overview">
+        <div class="container">
+            <div class="overview-content">
+                <div class="overview-text">
+                    <h2>非遗金融评估成果展示</h2>
+                    <p>自成立以来，我们已完成500多个非遗项目的金融评估工作，促成超过20亿元的投融资对接，帮助众多非遗传承人和文化企业实现了可持续发展。</p>
+                    <div class="overview-stats">
+                        <div class="stat">
+                            <div class="stat-number">523</div>
+                            <div class="stat-title">已评估项目</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">¥23.6亿</div>
+                            <div class="stat-title">促成融资额</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">86%</div>
+                            <div class="stat-title">项目发展率</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="overview-image">
+                    <img src="/api/placeholder/450/300" alt="非遗金融评估概览">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-filters">
+        <div class="container">
+            <div class="filter-wrapper">
+                <div class="filter-categories">
+                    <button class="filter-btn active" data-filter="all">全部案例</button>
+                    <button class="filter-btn" data-filter="financing">融资案例</button>
+                    <button class="filter-btn" data-filter="transformation">转化案例</button>
+                    <button class="filter-btn" data-filter="protection">保护案例</button>
+                    <button class="filter-btn" data-filter="innovation">创新案例</button>
+                </div>
+                <div class="filter-sort">
+                    <label>排序：</label>
+                    <select id="projectSort">
+                        <option value="latest">最新发布</option>
+                        <option value="amount">融资金额</option>
+                        <option value="growth">发展增长率</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-grid">
+        <div class="container">
+            <div class="projects-container">
+                <!-- 案例1：苏州刺绣 -->
+                <div class="project-item" id="suzhou" data-category="financing">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/250" alt="苏州刺绣产业基金">
+       
