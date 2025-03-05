@@ -1,0 +1,493 @@
+/* 
+关于我们页面样式表 (about.css)
+此文件包含关于我们页面的特定样式
+*/
+
+/* ===== 关于我们介绍 ===== */
+.about-intro {
+    padding: 8rem 0;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    margin-bottom: 2.5rem;
+    font-size: 3.6rem;
+}
+
+.about-text p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+}
+
+/* ===== 使命与愿景 ===== */
+.mission-vision {
+    padding: 6rem 0;
+    background-color: var(--light-color);
+}
+
+.mission-vision .container {
+    display: flex;
+    gap: 4rem;
+}
+
+.mission-box, .vision-box {
+    flex: 1;
+    background-color: white;
+    padding: 4rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.mission-box:hover, .vision-box:hover {
+    transform: translateY(-10px);
+}
+
+.mission-box .icon, .vision-box .icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.mission-box h3, .vision-box h3 {
+    margin-bottom: 2rem;
+    font-size: 2.8rem;
+}
+
+.mission-box p, .vision-box p {
+    font-size: 1.8rem;
+}
+
+/* ===== 价值观 ===== */
+.values {
+    padding: 8rem 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.value-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 3rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-10px);
+}
+
+.value-icon {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.value-item h3 {
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+}
+
+/* ===== 团队成员 ===== */
+.team {
+    padding: 8rem 0;
+    background-color: var(--light-color);
+}
+
+.team-members {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.team-member {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.member-photo {
+    width: 30%;
+    min-width: 250px;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-info {
+    flex: 1;
+    padding: 3rem;
+}
+
+.member-info h3 {
+    font-size: 2.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.member-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.member-desc {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.member-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.member-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--gray-200);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.member-social a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ===== 专家顾问 ===== */
+.advisors {
+    padding: 8rem 0;
+}
+
+.advisors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+}
+
+.advisor {
+    text-align: center;
+}
+
+.advisor-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 2rem;
+    border: 5px solid white;
+    box-shadow: var(--box-shadow);
+}
+
+.advisor-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.advisor h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.advisor p {
+    color: var(--gray-600);
+}
+
+/* ===== 发展历程 ===== */
+.milestones {
+    padding: 8rem 0;
+    background-color: var(--light-color);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 130px;
+    width: 3px;
+    background-color: var(--primary-color);
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 4rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-date {
+    width: 130px;
+    padding-right: 30px;
+    text-align: right;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+}
+
+.timeline-content {
+    position: relative;
+    flex: 1;
+    padding-left: 30px;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -9px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: var(--box-shadow);
+}
+
+.timeline-content h3 {
+    margin-bottom: 1rem;
+}
+
+/* ===== 办公环境 ===== */
+.office {
+    padding: 8rem 0;
+}
+
+.office-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.office-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.office-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.office-image:hover img {
+    transform: scale(1.05);
+}
+
+/* ===== 加入我们 ===== */
+.join-us {
+    padding: 8rem 0;
+    background-color: var(--light-color);
+}
+
+.join-content {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.join-text {
+    flex: 1;
+}
+
+.join-text h2 {
+    margin-bottom: 2rem;
+    font-size: 3.6rem;
+}
+
+.join-positions {
+    margin: 3rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.position {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.position h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.join-image {
+    flex: 1;
+}
+
+.join-image img {
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+}
+
+/* ===== 联系信息 ===== */
+.contact-info {
+    padding: 8rem 0;
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.contact-card {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+}
+
+.contact-icon {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.contact-card h3 {
+    margin-bottom: 1.5rem;
+}
+
+.contact-card p {
+    margin-bottom: 1rem;
+}
+
+.contact-map {
+    text-align: center;
+}
+
+.contact-map h3 {
+    margin-bottom: 2rem;
+}
+
+.map-container {
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.map-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== 响应式调整 ===== */
+@media (max-width: 992px) {
+    .about-content, 
+    .mission-vision .container,
+    .join-content {
+        flex-direction: column;
+    }
+    
+    .about-image, 
+    .join-image {
+        order: -1;
+    }
+    
+    .member-photo {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        flex-direction: column;
+    }
+    
+    .member-photo {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .timeline::before {
+        left: 50px;
+    }
+    
+    .timeline-date {
+        width: 100px;
+        font-size: 1.4rem;
+    }
+    
+    .office-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .mission-vision .container {
+        flex-direction: column;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-date {
+        width: 80px;
+        font-size: 1.3rem;
+    }
+    
+    .timeline-content::before {
+        left: -4px;
+        width: 15px;
+        height: 15px;
+    }
+}
